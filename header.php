@@ -19,6 +19,16 @@
 
 <body <?php body_class('hello-class'); ?>>
 
-    <?php wp_body_open(); ?>
+    <?php 
+
+    if(function_exists('wp_body_open')) {
+        // This function is used to ensure that the body open hook is called
+        // which allows plugins to inject content right after the opening body tag.
+        wp_body_open(); 
+
+    }
+    
+    
+    ?>
 
     <header>Header</header>

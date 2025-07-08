@@ -3,11 +3,20 @@ function amrila_enqueue_scripts() {
     $stylesheet_path = get_template_directory() . '/style.css';
     $script_path = get_template_directory() . '/assets/main.js';
 
+    // Register Styles and Scripts
     wp_register_style(
         'style-css',
         get_stylesheet_uri(),
         [],
         filemtime($stylesheet_path),
+        'all'
+    );
+
+      wp_register_style(
+        'bootstrap-css',
+        get_template_directory_uri() . '/assets/src/library/css/bootstrap.min.css',
+        [],
+        false,
         'all'
     );
 
@@ -19,8 +28,21 @@ function amrila_enqueue_scripts() {
         true // Load in footer
     );
 
+       wp_register_script(
+        'bootstrap-js',
+        get_template_directory_uri() . '/assets/src/library/js/bootstrap.min.js',
+        ['jquery'],
+        false,
+        true // Load in footer
+    );
+
+    // Enqueue Styles
     wp_enqueue_style('style-css');
+    wp_enqueue_style('bootstrap-css');
+    
+    // Enqueue Scripts
     wp_enqueue_script('main-js');
+    wp_enqueue_script('bootstrap-js');
 }
 add_action('wp_enqueue_scripts', 'amrila_enqueue_scripts');
 

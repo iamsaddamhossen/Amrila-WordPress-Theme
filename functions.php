@@ -1,4 +1,20 @@
 <?php
+/**
+ * Enqueue styles and scripts for the Amrila theme.
+ *
+ * This function registers and enqueues the main stylesheet and JavaScript files,
+ * as well as Bootstrap CSS and JS files.
+ *
+ * @package Amrila
+ */ 
+
+
+ if ( ! defined( 'AMRILA_DIR_PATH' ) ) {
+	define( 'AMRILA_DIR_PATH', untrailingslashit( get_template_directory() ) );
+}
+
+require_once AMRILA_DIR_PATH . '/inc/helpers/autoloader.php';
+
 function amrila_enqueue_scripts() {
     $stylesheet_path = get_template_directory() . '/style.css';
     $script_path = get_template_directory() . '/assets/main.js';

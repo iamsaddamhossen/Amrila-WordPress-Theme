@@ -15,6 +15,12 @@
 
 require_once AMRILA_DIR_PATH . '/inc/helpers/autoloader.php';
 
+function amrila_get_theme_instance() {
+    return \AMRILA_THEME\Inc\AMRILA_THEME::get_instance();
+}
+
+amrila_get_theme_instance();
+
 function amrila_enqueue_scripts() {
     $stylesheet_path = get_template_directory() . '/style.css';
     $script_path = get_template_directory() . '/assets/main.js';

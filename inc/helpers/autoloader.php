@@ -16,7 +16,7 @@ namespace AMRILA_THEME\Inc\Helpers;
  */
 function autoloader( $resource = '' ) {
 	$resource_path  = false;
-	$namespace_root = 'AQUILA_THEME\\';
+	$namespace_root = 'AMRILA_THEME\\';
 	$resource       = trim( $resource, '\\' );
 
 	if ( empty( $resource ) || strpos( $resource, '\\' ) === false || strpos( $resource, $namespace_root ) !== 0 ) {
@@ -68,7 +68,7 @@ function autoloader( $resource = '' ) {
 				break;
 		}
 
-		$resource_path = sprintf( '%s/inc/%s/%s.php', untrailingslashit( AQUILA_DIR_PATH ), $directory, $file_name );
+		$resource_path = sprintf( '%s/inc/%s/%s.php', untrailingslashit( AMRILA_DIR_PATH ), $directory, $file_name );
 
 	}
 
